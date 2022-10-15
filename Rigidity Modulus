@@ -13,6 +13,8 @@
 //D = distance between scale and mirror (m)//
 // theta is the angle of twist//
 
+//last edited on: Oct 15 22 22 46; @i.am.adonis.peo//
+
 #include<stdio.h>
 #include<math.h>
 main()
