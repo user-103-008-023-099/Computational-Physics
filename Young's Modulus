@@ -1,6 +1,7 @@
 //Program to find the Young's modulus usinf do...while loop//
 
 //Program is written in C//
+
 //Formula Y = (mgl^3)/(4bd^3s)//
 //Y = Young's Modulus of the material of the beam (N/m2)//
 //s = depression at the center of the beam (m)//
