@@ -1,0 +1,47 @@
+//program to find the rigidity modulus of the material using while loop//
+
+//program written in C//
+
+//formula//
+//n = (2MgRl)/(pi*r^4 *theta); where theta = x/(2D)//
+//n = rigidity modulus of the material (N/m^2)//
+//M = mass applied in Kg, g=9.8 m/s^2//
+//R = radius of the pulley in metre//
+//l = distance between fixed end of the rod and the mirror (m)//
+//r = radius of the rod whose rigidity is to be found (m)//
+//x = change in scale reading for a fixed mass (m)//
+//D = distance between scale and mirror (m)//
+// theta is the angle of twist//
+
+#include<stdio.h>
+#include<math.h>
+main()
+  {
+  int i, count;
+  float n, n_sum, n_avg, m, g=9.8, R, l, r, theta, x, D;
+  printf("Enter how many data you have given:");
+  scanf("%d", &count);
+  i = 1; n_avg = 0;
+  printf("Enter the radius of the pulley and radius of the rod in metre:");
+  scanf("%f %f",&R, &r);
+  printf("Enter the distance between scale and mirror in metre:");
+  scanf("%f", &D);
+  printf("Enter the distance between fixed end of the rod and the mirror:");
+  scanf("%f",&l);
+  printf("Enter the fixed mass in kg:");
+  scanf("%f", &m);
+  printf("-------------------------------------------------------------\n");
+  while(i<=count)
+    {
+    printf("Enter the change in scale reading in metre:");
+    scanf("%f",&x);
+    theta = x/(2*D);
+    n= (2*m*g*R*l)/(3.14*pow(r,4)* theta);
+    n_sum = n_sum +n;
+    i=i+1;
+    }
+  n_avg= n_sum/count;
+  printf("----------------------------------------------------------------\n");
+  printf("The Rigidity modulus of the material of the given rod = %6.3e N/m^2 \n",n_avg);
+  printf("-----------------------------------------------------------------");
+ }
