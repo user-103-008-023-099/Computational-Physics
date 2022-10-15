@@ -1,0 +1,42 @@
+//Program to find the Young's modulus usinf do...while loop//
+
+//Program is written in C//
+//Formula Y = (mgl^3)/(4bd^3s)//
+//Y = Young's Modulus of the material of the beam (N/m2)//
+//s = depression at the center of the beam (m)//
+//m = Mass suspended at the center of the beam (Kg)//
+//g = acceleration due to gravity (9.8 m/s2)//
+//l = distance between the two knife edges (m)//
+//b = breadth of the beam (m)//
+//d = thickness of the beam (m)//
+
+//program last edited on : Oct 15 22 22 35; @i.am.adonis.peo//
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+  {
+  int i,n;
+  float y,y_avg,y_sum,s,m,l,b,d, g=9.8;
+  y=0; y_sum=0;
+  printf("How many data to be given:");
+  scanf("%d", &n);
+  printf("distance between the two knife edges in metre:");
+  scanf("%f",&l);
+  printf("Enter the breadth and thickness of the beam in metre:");
+  scanf("%f %f", &b,&d);
+  do
+    {
+    printf("Enter the depression at the center of the beam in metre:");
+    scanf("%f", &s);
+    printf("Enter the Mass suspended at the center of the beam in Kg:");
+    scanf("%f", &m);
+    y =(m*g* pow(l,3))/(4*b*pow(d,3)*s);
+    y_sum =y_sum +y;
+    i=i+1;
+    }
+  while(i<n);
+  y_avg= y_sum/n;
+  printf("The Young's modulus of the given material = %8.2e N/m2", y_avg);
+}
